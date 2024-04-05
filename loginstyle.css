@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", 'Helvetica Neue', sans-serif;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    /* background-image: url(./photos/bgxx.jpg); */
+    background: linear-gradient(135deg, #231d5a , #D3D3D3,yellow);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: gray; */
+    background-repeat: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+
+}
+
+.Login {
+    width: 28%;
+    /* height:80%; */
+    border-radius: 14px;
+    background-color: rgba(38, 43, 54, 0.9);
+    border-radius: 16px;
+    padding: 10px 15px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    background-color: white;
+    margin-bottom:30px;
+}
+
+.for {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.for > h1 {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #0b0b0b;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 900;
+    color: #231d5a;
+    text-decoration: underline;
+    text-decoration-color: yellow;
+    text-underline-offset: 8px;
+    text-decoration-thickness: .8px;
+}
+
+.for p {
+    font-size: 25px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin: 20px 0px;
+    ;
+}
+
+select {
+    width: 100px;
+    height: 24px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.username,
+.password {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.for form .year {
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.username i,
+.password i {
+    font-size: 20px;
+}
+
+.username input,
+.password input {
+    background-color: white;
+    height: 25px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.password button {
+    flex-shrink: 0;/*Button ne Nanu no thava de*/
+}
+
+input:focus {
+    border-color: yellow;
+}
+
+.fp a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+
+}
+
+button[type="submit"] {
+    background-color: rgba(249, 219, 18, 0.8);
+    width: 100%;
+    height: 35px;
+    color: black;
+    border: none;
+    font-size: 18px;
+    transition: all .2s ease-in-out;
+}
+
+button:hover {
+    background-color: rgb(250, 250, 0, 1);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
+
+.for > a {
+    text-decoration: none;
+    color: black;
+}
+
+.for > p {
+    font-size: 14px;
+}
+
+
+.password button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.password button:hover {
+    background-color: #f1f1f1;
+}
+
+.Login p{
+    text-align: center;
+    margin:15px 0px;
+    font-weight: 500;
+
+}
+.Login p a{
+    text-decoration: none;
+
+
+}
+.marq{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;;
+    background-color: white;
+    color: black; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    
+}
+.marq marquee{
+    width: 50%;
+}
+.marq  a{
+    text-decoration: none;
+    
+    
+
+}
+a{
+    color: #231d5a;
+}
+
+a:hover{
+    color: #231d5a;
+    opacity: .7;
+}

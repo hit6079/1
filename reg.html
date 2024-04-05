@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" href="regstyle.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../prozect/photos/logooo.png" />
+
+    <title>Registration Form - VDVS</title>
+    <script
+      src="https://kit.fontawesome.com/1401643067.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Registration Form</div>
+      <div class="content">
+        <form onsubmit=" return validateForm()">
+          <div class="information-student">
+            <div class="ip-text">
+              <span class="details">Full Name</span>
+              <input id="fullname" type="text" placeholder="Enter your name" />
+            </div>
+            <div class="ip-text">
+              <span class="details">Username</span>
+              <input
+                id="username"
+                type="text"
+                placeholder="Enter your username"
+              />
+            </div>
+            <div class="ip-text">
+              <span class="details">Email</span>
+              <input id="E-mail" type="text" placeholder="Enter your email" />
+            </div>
+            <div class="ip-text">
+              <span class="details">Phone Number</span>
+              <input
+                id="phoneNumber"
+                type="text"
+                placeholder="Enter your number"
+              />
+            </div>
+            <div class="ip-text">
+              <span class="details">Password</span>
+              <div class="password-container">
+                <input
+                  id="pass"
+                  type="password"
+                  placeholder="Enter your password"
+                />
+                <button type="button" id="toggleBtn" onclick="togglePassword()">
+                  <i
+                    class="fa-solid fa-eye"
+                    id="toggleIcon"
+                    style="color: #000000"
+                  ></i>
+                </button>
+              </div>
+            </div>
+            <div class="ip-text">
+              <span class="details">Confirm Password</span>
+              <input
+                id="cpass"
+                type="text"
+                placeholder="Confirm your password"
+              />
+            </div>
+          </div>
+          <div class="gender-mahiti">
+            <input type="radio" name="gender" id="dot-1" />
+            <input type="radio" name="gender" id="dot-2" />
+
+            <span class="gender-title">Gender</span>
+            <div class="category">
+              <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Male</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">Female</span>
+              </label>
+            </div>
+          </div>
+          <div class="button">
+            <input type="submit" value="Register" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      function togglePassword() {
+        var passwordInput = document.getElementById("pass");
+        var toggleIcon = document.getElementById("toggleIcon");
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          toggleIcon.classList.remove("fa-eye");
+          toggleIcon.classList.add("fa-eye-slash");
+        } else {
+          passwordInput.type = "password";
+          toggleIcon.classList.remove("fa-eye-slash");
+          toggleIcon.classList.add("fa-eye");
+        }
+      }
+      function validateForm() {
+        let fullname = document.querySelector("#fullname").value;
+        let username = document.querySelector("#username").value;
+        let email = document.querySelector("#E-mail").value;
+        let phoneNum = document.querySelector("#phoneNumber").value;
+        let pass = document.querySelector("#pass").value;
+        let cpass = document.querySelector("#cpass").value;
+        let mcheck = document.querySelector("#dot-1").checked;
+        let fcheck = document.querySelector("#dot-2").checked;
+
+        if (fullname.trim().length < 5) {
+          alert("Full name must be at least 5 characters long.");
+          return false;
+        }
+        let nameType = /^[a-zA-Z0-9_.]{5,10}$/;
+        if (!username.match(nameType)) {
+          alert(
+            "Your Username Should :\n\n ☛ Consists of alphanumeric characters and the special characters.\n ☛ Have a length between 5 and 10 characters.\n "
+          );
+          return false;
+        }
+
+        if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+          alert("You have entered an invalid email address!");
+          return false;
+        }
+
+        // if(!phoneNum.startsWith("+91") || !phoneNum.length==13 ){
+        //   alert("Enter phone no. in +91XXXXXXXXXX format")
+        // }
+
+        if (!/^\+91[0-9]{10}$/.test(phoneNum)) {
+          alert("Enter phone no. in +91XXXXXXXXXX format");
+
+          return false;
+        }
+
+        if (
+          !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{:;"'?><,.\|]).{8,15}$/.test(
+            pass
+          )
+        ) {
+          alert(
+            "Your Password Should :\n\n ☛ Contains at least one numeric digit.\n ☛ Contains at least one special character from the set [!@#$%^&*].\n ☛ Consists of alphanumeric characters and the specified special characters.\n ☛ Has a length between 8 and 15 characters.\n "
+          );
+
+          return false;
+        }
+
+        if (pass != cpass) {
+          alert("Password and Confirm Password do not match.");
+          return false;
+        }
+        if (!mcheck && !fcheck) {
+          alert("Select Gender ");
+          return false;
+        }
+        alert(
+          "Form is registered successfully\nThanks for filling out our form! Our team will contact you soon."
+        );
+        return true;
+      }
+    </script>
+  </body>
+</html>

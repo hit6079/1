@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="loginstyle.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <base href="photos/">
+    <link rel="icon" type="image/x-icon" href="logooo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="Login">
+        <div class="for">
+          <h1>VIDHYADHISH VIDHYASANKUL</h1>
+          <p
+            style="
+              font-size: 20px;
+              font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                'Helvetica Neue', sans-serif;
+            "
+          >
+            Welcome!!!
+          </p>
+          <form onsubmit="return validateForm()">
+            <div class="year">
+              <div>
+                <span>Login Year : </span>
+                <select name="year">
+                  <option>2023</option>
+                  <option>2022</option>
+                  <option>2021</option>
+                </select>
+              </div>
+              <div class="username">
+                <i class="bx bxs-user">:</i>
+                <input
+                  type="text"
+                  placeholder="Enter USERNAME"
+                  id="nameid"
+                  name="username"
+                  
+                />
+              </div>
+              <div class="password">
+                <i class="bx bx-lock">:</i>
+                <input
+                  type="password"
+                  placeholder="Enter PASSWORD"
+                  name="password"
+                  id="password"
+                  
+                />
+                <button type="button" onclick="buttonToggle()">
+                  <i class="fa fa-eye" id="eyeIcon" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="fp"><a href="">Forgot Password</a></div>
+              <button type="submit">Login</button>
+            </div>
+          </form>
+          <a class="homepage" href="../index.htm">Back To Home</a>
+
+          <p>Problem in Login?, Help Line No.: 9825634545</p>
+        </div>
+        <p><a href="../reg.html" target="_blank">Click here to Register</a></p>
+      </div>
+    </div>
+    <div class="marq">
+      <marquee onmouseover="this.stop();" onmouseout="this.start();"
+        >Register and get upto <b>90% Schloarship</b> ☛
+        <b><a href="../reg.html" target="_blank">Register</a></b></marquee
+      >
+    </div>
+
+    <script>
+      function validateForm() {
+        let username = document.getElementById("nameid").value;
+        let password = document.getElementById("password").value;
+
+        if (username.trim() === "") {
+          alert("Please enter a username.");
+          return false;
+        }
+        let nameType = /^[a-zA-Z0-9_.]{5,10}$/;
+        if (!username.match(nameType)) {
+          alert(
+            "Your Username Should :\n\n ☛ Consists of alphanumeric characters and the special characters.\n ☛ Have a length between 5 and 10 characters.\n "
+          );
+          return false;
+        }
+        if (!CheckPassword(document.getElementById("password"))) {
+          return false;
+        }
+
+        return true;
+      }
+
+      function CheckPassword(iput) {
+        var paswd =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{:;"'?><,.\|]).{8,15}$/;
+        if (iput.value.match(paswd)) {
+          alert("Server side error");
+          return true;
+        } else {
+          alert(
+            "Your Password Should :\n\n ☛ Contains at least one numeric digit.\n ☛ Contains at least one special character from the set [!@#$%^&*].\n ☛ Consists of alphanumeric characters and the specified special characters.\n ☛ Has a length between 8 and 15 characters.\n "
+          );
+          return false;
+        }
+      }
+
+      function buttonToggle() {
+        var passwordInput = document.getElementById("password");
+        var eyeIcon = document.getElementById("eyeIcon");
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          eyeIcon.classList.remove("fa-eye");
+          eyeIcon.classList.add("fa-eye-slash");
+        } else {
+          passwordInput.type = "password";
+          eyeIcon.classList.remove("fa-eye-slash");
+          eyeIcon.classList.add("fa-eye");
+        }
+      }
+    </script>
+  </body>
+</html>
