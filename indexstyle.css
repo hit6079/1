@@ -1,5 +1,3 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
@@ -16,7 +14,7 @@
        position: sticky;
        top: 0;
        background-color: white;
-      z-index: 999;
+      
 
       }
       .logo img{
@@ -126,9 +124,8 @@
         background-image: url(photos/result13.png);
        background-repeat: no-repeat;
        animation:anim 18s infinite ;
-       /* animation: sss 3s ; */
-       z-index: 0;
-        
+       animation: sss 3s ;
+        z-index: -1;
       }
       @keyframes sss{
         0%{
@@ -221,7 +218,7 @@
         background-color: antiquewhite;
       }
       .app .rightdivv{
-        grid-row:2/3;
+        grid-row:2/4;
         display: flex;
         justify-content: center;
         
@@ -229,8 +226,8 @@
 
       }
       .rightdivv img{
-        width: 559px;
-        height: 325px;
+        width: 250px;
+        height: 500px;
         margin-right: 20%;
 
       }
@@ -347,71 +344,4 @@
         background-color: #212529;
         color: #ddd;
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      /* Width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: hsl(60, 100%, 50%); /* Light gray */
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #2196F3; /* Blue */
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(60, 100%, 50%); /* Darker blue */
-}
-
-/* Width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: rgb(197, 197, 142); 
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #393185; /* Yellow */
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #393185; /* Darker yellow */
-}
-
       
